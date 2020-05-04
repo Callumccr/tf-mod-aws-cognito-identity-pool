@@ -124,8 +124,8 @@ TO-DO
 
 | Name | Description |
 |------|-------------|
-| aws\_cognito\_identity\_pool\_arn | The ARNs of the cognito identity pool |
-| aws\_cognito\_identity\_pool\_id | The ids of the cognito identity pool |
+| identity\_pool\_arn | The ARNs of the cognito identity pool |
+| identity\_pool\_id | The ids of the cognito identity pool |
 
 
 
