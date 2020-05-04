@@ -33,7 +33,7 @@ variable "aws_assume_role_external_id" {
 }
 
 # -----------------------------------------------------------------------------
-# Outputs: TF-MOD-AWS-COGNITO-IDENTITY-POOL
+# Varibles: TF-MOD-AWS-COGNITO-IDENTITY-POOL
 # -----------------------------------------------------------------------------
 
 // Conditional Triggers
@@ -41,12 +41,6 @@ variable "enabled" {
   description = "(Optional) - A Switch that decides whether to create the module. Default is true"
   type        = bool
   default     = true
-}
-
-variable "create_cognito_identity_pool" {
-  description = "(Optional) - Whether to create the Cognito Identity Pool. Default is false"
-  type        = bool
-  default     = false
 }
 
 // Resources

@@ -1,5 +1,5 @@
 resource "aws_cognito_identity_pool" "default" {
-  count                            = var.enabled == true && var.create_cognito_identity_pool == true ? 1 : 0
+  count                            = var.enabled == true ? 1 : 0
   identity_pool_name               = module.label.id
   allow_unauthenticated_identities = var.allow_unauthenticated_identities
 
