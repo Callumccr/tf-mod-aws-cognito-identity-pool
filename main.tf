@@ -93,7 +93,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "unauthenticated" {
-  name = "${module.label.id}${var.delimiter}unauthenticated${var.delimiter}policy"
+  name = "${module.role_label.id}${var.delimiter}unauthenticated${var.delimiter}policy"
   role = aws_iam_role.unauthenticated.id
 
   policy = <<EOF
