@@ -6,7 +6,7 @@ resource "aws_cognito_identity_pool" "default" {
   dynamic "cognito_identity_providers" {
     for_each = length(cognito_identity_providers) > 0 ? [] : var.cognito_identity_providers
     iterator = provider
-    content = {
+    content {
       client_id               = provider.client_id.value
       provider_name           = provider.provider_name.value
       server_side_token_check = provider.server_side_token_check.value
