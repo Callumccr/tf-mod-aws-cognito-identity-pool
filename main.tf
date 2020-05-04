@@ -1,12 +1,12 @@
 resource "aws_cognito_identity_pool" "default" {
-  count                            = var.enabled == true && var.create_cognito_identity_pool == true ? 1 : 0
-  identity_pool_name               = module.label.id
+  count                            = var.enabled == true ? 1 : 0
+  identity_pool_name               = var.identity_pool_name
   allow_unauthenticated_identities = var.allow_unauthenticated_identities
 
   dynamic "cognito_identity_providers" {
-    for_each = length(cognito_identity_providers) > 0 ? [] : var.cognito_identity_providers
+    for_each = length(var.cognito_identity_providers) > 0 ? [] : var.cognito_identity_providers
     iterator = provider
-    content = {
+    content {
       client_id               = provider.client_id.value
       provider_name           = provider.provider_name.value
       server_side_token_check = provider.server_side_token_check.value

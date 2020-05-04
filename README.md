@@ -43,12 +43,12 @@
 
 [![README Header][logo]][website]
 
-# tf-mod-aws-cognito-user-pool
+# tf-mod-aws-cognito-identity-pool
 
 ## Module description
 
 
-Use the `tf-mod-aws-cognito-user-pool` Terraform module to provision a fully configurable Cognito UserPool.
+Use the `tf-mod-aws-cognito-identity-pool` Terraform module to provision a fully configurable AWS Cognito Identity Pool.
 
 
 
@@ -67,7 +67,7 @@ Project: **[%!s(<nil>)](%!s(<nil>))** : [[%!s(<nil>)](%!s(<nil>))] | [[%!s(<nil>
 ## Usage
 
 **IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
-Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/https://github.com/Callumccr/tf-mod-aws-cognito-user-pool/releases).
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/https://github.com/Callumccr/tf-mod-aws-cognito-identity-pool/releases).
 
 
 The below values shown in the usage of this module are purely representative, please replace desired values as required.
@@ -111,12 +111,11 @@ TO-DO
 | aws\_assume\_role\_external\_id | (Optional) - The external ID to use when making the AssumeRole call. | `string` | `""` | no |
 | aws\_assume\_role\_session\_name | (Optional) - The session name to use when making the AssumeRole call. | `string` | `""` | no |
 | aws\_region | The AWS region (e.g. ap-southeast-2). Autoloaded from region.tfvars. | `string` | `""` | no |
-| cognito\_identity\_providers | (Optional) - An array of Amazon Cognito Identity user pools and their client IDs. | `list(any)` | `[]` | no |
-| create\_cognito\_identity\_pool | (Optional) - Whether to create the Cognito Identity Pool. Default is false | `bool` | `false` | no |
+| cognito\_identity\_providers | (Optional) - An array of Amazon Cognito Identity user pools and their client IDs. | <code><pre>list(object({<br>    client_id               = string<br>    provider_name           = string<br>    server_side_token_check = bool<br>  }))<br></pre></code> | <code><pre>[<br>  {<br>    "client_id": "",<br>    "provider_name": "",<br>    "server_side_token_check": false<br>  }<br>]<br></pre></code> | no |
 | delimiter | (Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes` | `string` | `"-"` | no |
 | enabled | (Optional) - A Switch that decides whether to create the module. Default is true | `bool` | `true` | no |
 | environment | (Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod' | `string` | `""` | no |
-| identity\_pool\_name | (Optional) - The Cognito Identity Pool name. | `bool` | `false` | no |
+| identity\_pool\_name | (Optional) - The Cognito Identity Pool name. | `string` | `""` | no |
 | name | (Optional) - Solution name, e.g. 'vault', 'consul', 'keycloak', 'k8s', or 'baseline' | `string` | `""` | no |
 | namespace | (Optional) - Namespace, which could be your abbreviated product team, e.g. 'rci', 'mi', 'hp', or 'core' | `string` | `""` | no |
 | tags | (Optional) - Additional tags | `map(string)` | `{}` | no |
@@ -145,7 +144,7 @@ Additionally, check out these other related, and maintained projects.
 
 For additional context, refer to some of these links. 
 
-- [Resource: aws_cognito_user_pool](https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#username_attributes) - Terraform Documentation on Cognito user_pool resources
+- [Resource: aws_cognito_identity_pool](https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html) - Terraform Documentation on Cognito aws_cognito_identity_pool resources
 
 
 
@@ -153,7 +152,7 @@ For additional context, refer to some of these links.
 
 **Got a question?** We got answers. 
 
-File a Github [issue](https://github.com/Callumccr/tf-mod-aws-cognito-user-pool/issues), or message us on [Slack][slack]
+File a Github [issue](https://github.com/Callumccr/tf-mod-aws-cognito-identity-pool/issues), or message us on [Slack][slack]
 
 
 ### Contributors

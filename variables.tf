@@ -33,7 +33,7 @@ variable "aws_assume_role_external_id" {
 }
 
 # -----------------------------------------------------------------------------
-# Outputs: TF-MOD-AWS-COGNITO-IDENTITY-POOL
+# Varibles: TF-MOD-AWS-COGNITO-IDENTITY-POOL
 # -----------------------------------------------------------------------------
 
 // Conditional Triggers
@@ -43,17 +43,11 @@ variable "enabled" {
   default     = true
 }
 
-variable "create_cognito_identity_pool" {
-  description = "(Optional) - Whether to create the Cognito Identity Pool. Default is false"
-  type        = bool
-  default     = false
-}
-
 // Resources
 variable "identity_pool_name" {
-  type        = bool
+  type        = string
   description = "(Optional) - The Cognito Identity Pool name."
-  default     = false
+  default     = ""
 }
 
 variable "allow_unauthenticated_identities" {
@@ -63,12 +57,20 @@ variable "allow_unauthenticated_identities" {
 }
 
 variable "cognito_identity_providers" {
-  type        = list(any)
+  type = list(object({
+    client_id               = string
+    provider_name           = string
+    server_side_token_check = bool
+  }))
   description = "(Optional) - An array of Amazon Cognito Identity user pools and their client IDs."
-  default     = []
+  default = [
+    {
+      client_id               = ""
+      provider_name           = ""
+      server_side_token_check = false
+    }
+  ]
 }
-
-
 # -----------------------------------------------------------------------------
 # Variables: TF-MOD-LABEL
 # -----------------------------------------------------------------------------
