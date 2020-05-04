@@ -3,8 +3,8 @@ module "label" {
   namespace          = var.namespace
   environment        = var.environment
   name               = var.name
-  attributes         = ["identity-pool"]
-  delimiter          = "-"
+  attributes         = ["identity pool"]
+  delimiter          = " "
   additional_tag_map = {} /* Additional attributes (e.g. 1) */
   label_order        = ["environment", "namespace", "name", "attributes"]
 }
