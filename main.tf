@@ -4,7 +4,7 @@ resource "aws_cognito_identity_pool" "default" {
   allow_unauthenticated_identities = var.allow_unauthenticated_identities
 
   dynamic "cognito_identity_providers" {
-    for_each = length(cognito_identity_providers) > 0 ? [] : var.cognito_identity_providers
+    for_each = length(var.cognito_identity_providers) > 0 ? [] : var.cognito_identity_providers
     iterator = provider
     content {
       client_id               = provider.client_id.value
