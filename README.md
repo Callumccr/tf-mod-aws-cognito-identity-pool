@@ -43,12 +43,12 @@
 
 [![README Header][logo]][website]
 
-# tf-mod-aws-cognito-user-pool
+# tf-mod-aws-cognito-identity-pool
 
 ## Module description
 
 
-Use the `tf-mod-aws-cognito-user-pool` Terraform module to provision a fully configurable Cognito UserPool.
+Use the `tf-mod-aws-cognito-identity-pool` Terraform module to provision a fully configurable AWS Cognito Identity Pool.
 
 
 
@@ -67,7 +67,7 @@ Project: **[%!s(<nil>)](%!s(<nil>))** : [[%!s(<nil>)](%!s(<nil>))] | [[%!s(<nil>
 ## Usage
 
 **IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
-Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/https://github.com/Callumccr/tf-mod-aws-cognito-user-pool/releases).
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/https://github.com/Callumccr/tf-mod-aws-cognito-identity-pool/releases).
 
 
 The below values shown in the usage of this module are purely representative, please replace desired values as required.
@@ -145,7 +145,7 @@ Additionally, check out these other related, and maintained projects.
 
 For additional context, refer to some of these links. 
 
-- [Resource: aws_cognito_user_pool](https://www.terraform.io/docs/providers/aws/r/cognito_user_pool.html#username_attributes) - Terraform Documentation on Cognito user_pool resources
+- [Resource: aws_cognito_identity_pool](https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html) - Terraform Documentation on Cognito aws_cognito_identity_pool resources
 
 
 
@@ -153,7 +153,7 @@ For additional context, refer to some of these links.
 
 **Got a question?** We got answers. 
 
-File a Github [issue](https://github.com/Callumccr/tf-mod-aws-cognito-user-pool/issues), or message us on [Slack][slack]
+File a Github [issue](https://github.com/Callumccr/tf-mod-aws-cognito-identity-pool/issues), or message us on [Slack][slack]
 
 
 ### Contributors
