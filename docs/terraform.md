@@ -19,7 +19,7 @@
 | delimiter | (Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes` | `string` | `"-"` | no |
 | enabled | (Optional) - A Switch that decides whether to create the module. Default is true | `bool` | `true` | no |
 | environment | (Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod' | `string` | `""` | no |
-| identity\_pool\_name | (Optional) - The Cognito Identity Pool name. | `bool` | `false` | no |
+| identity\_pool\_name | (Optional) - The Cognito Identity Pool name. | `string` | `""` | no |
 | name | (Optional) - Solution name, e.g. 'vault', 'consul', 'keycloak', 'k8s', or 'baseline' | `string` | `""` | no |
 | namespace | (Optional) - Namespace, which could be your abbreviated product team, e.g. 'rci', 'mi', 'hp', or 'core' | `string` | `""` | no |
 | tags | (Optional) - Additional tags | `map(string)` | `{}` | no |
