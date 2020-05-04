@@ -45,9 +45,9 @@ variable "enabled" {
 
 // Resources
 variable "identity_pool_name" {
-  type        = bool
+  type        = string
   description = "(Optional) - The Cognito Identity Pool name."
-  default     = false
+  default     = ""
 }
 
 variable "allow_unauthenticated_identities" {

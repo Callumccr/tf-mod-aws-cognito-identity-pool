@@ -1,6 +1,6 @@
 resource "aws_cognito_identity_pool" "default" {
   count                            = var.enabled == true ? 1 : 0
-  identity_pool_name               = module.label.id
+  identity_pool_name               = var.identity_pool_name
   allow_unauthenticated_identities = var.allow_unauthenticated_identities
 
   dynamic "cognito_identity_providers" {
@@ -15,7 +15,7 @@ resource "aws_cognito_identity_pool" "default" {
 }
 
 resource "aws_iam_role" "authenticated" {
-  name               = "${module.role_label.id}${var.delimiter}authenticated"
+  name               = "${module.label.id}${var.delimiter}authenticated"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -42,7 +42,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "authenticated" {
-  name   = "${module.role_label.id}${var.delimiter}authenticated${var.delimiter}policy"
+  name   = "${module.label.id}${var.delimiter}authenticated${var.delimiter}policy"
   role   = aws_iam_role.authenticated.id
   policy = <<EOF
 {
@@ -66,7 +66,7 @@ EOF
 }
 
 resource "aws_iam_role" "unauthenticated" {
-  name               = "${module.role_label.id}${var.delimiter}unauthenticated"
+  name               = "${module.label.id}${var.delimiter}unauthenticated"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -93,7 +93,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "unauthenticated" {
-  name = "${module.role_label.id}${var.delimiter}unauthenticated${var.delimiter}policy"
+  name = "${module.label.id}${var.delimiter}unauthenticated${var.delimiter}policy"
   role = aws_iam_role.unauthenticated.id
 
   policy = <<EOF
