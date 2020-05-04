@@ -1,0 +1,80 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: tf-mod-aws-cognito-identity-pool
+
+# Canonical Git repo
+github_repo: https://github.com/Callumccr/tf-mod-aws-cognito-identity-pool
+
+# # Badges to display
+# badges:
+#   - name: "Build Status"
+#     image: ""
+#     url: ""
+
+# Short description of this project
+description: |-
+  Use the `tf-mod-aws-cognito-identity-pool` Terraform module to provision a fully configurable AWS Cognito Identity Pool.
+
+# External context to include
+include:
+  - "docs/terraform.md"
+
+# Introduction to this project
+introduction: |-
+
+# How to use this module
+usage: |-
+  The below values shown in the usage of this module are purely representative, please replace desired values as required.
+
+  TO-DO
+  ```hcl
+  ```
+
+# How to get up and running with this project
+quickstart: |-
+
+# Simple and advanced examples of this project
+examples: |-
+  Simple and advanced examples of this project.
+
+  ### Advanced Example 1:
+
+  TO-DO
+  ```hcl
+  ```
+
+# Related projects
+related:
+  - name:
+    description:
+    url:
+
+# References
+references:
+  - name: "Resource: aws_cognito_identity_pool"
+    description: "Terraform Documentation on Cognito aws_cognito_identity_pool resources"
+    url: "https://www.terraform.io/docs/providers/aws/r/cognito_identity_pool.html"
+
+# Contributor information
+contributors:
+  - name: "Callum Robertson"
+    github: "callumccr"
+    avatar: https://media-exp1.licdn.com/dms/image/C5603AQHb_3oZMZA5YA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=5QQQAlHrm1od5fQNZwdjOtbZWvsGcgNBqFRhZWgnPx4
+    homepage: https://www.linkedin.com/in/callum-robertson-1a55b6110/
+
+# Jira information
+jira:
+  - project:
+    project_url:
+    epic:
+    epic_url:
+    user_story:
+    user_story_url:
+
+---
+
