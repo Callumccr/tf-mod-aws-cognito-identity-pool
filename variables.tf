@@ -57,12 +57,20 @@ variable "allow_unauthenticated_identities" {
 }
 
 variable "cognito_identity_providers" {
-  type        = list(any)
+  type = list(object({
+    client_id               = string
+    provider_name           = string
+    server_side_token_check = bool
+  }))
   description = "(Optional) - An array of Amazon Cognito Identity user pools and their client IDs."
-  default     = []
+  default = [
+    {
+      client_id               = ""
+      provider_name           = ""
+      server_side_token_check = false
+    }
+  ]
 }
-
-
 # -----------------------------------------------------------------------------
 # Variables: TF-MOD-LABEL
 # -----------------------------------------------------------------------------
