@@ -112,7 +112,6 @@ TO-DO
 | aws\_assume\_role\_session\_name | (Optional) - The session name to use when making the AssumeRole call. | `string` | `""` | no |
 | aws\_region | The AWS region (e.g. ap-southeast-2). Autoloaded from region.tfvars. | `string` | `""` | no |
 | cognito\_identity\_providers | (Optional) - An array of Amazon Cognito Identity user pools and their client IDs. | `list(any)` | `[]` | no |
-| create\_cognito\_identity\_pool | (Optional) - Whether to create the Cognito Identity Pool. Default is false | `bool` | `false` | no |
 | delimiter | (Optional) - Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes` | `string` | `"-"` | no |
 | enabled | (Optional) - A Switch that decides whether to create the module. Default is true | `bool` | `true` | no |
 | environment | (Optional) - Environment, e.g. 'dev', 'qa', 'staging', 'prod' | `string` | `""` | no |
